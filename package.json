@@ -45,6 +45,7 @@
 		"vitest": "^2.0.4"
 	},
 	"dependencies": {
+		"@sveltepress/theme-default": "^5.0.6",
 		"@sveltepress/vite": "^1.1.3"
 	}
 }
