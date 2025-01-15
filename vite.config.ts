@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitest/config';
-import { sveltekit } from '@sveltejs/kit/vite';
+import { sveltepress  } from '@sveltepress/vite' 
 
 export default defineConfig({
-	plugins: [sveltekit()],
+	plugins: [sveltepress()],
 
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
