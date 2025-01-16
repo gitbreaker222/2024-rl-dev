@@ -1,5 +1,6 @@
 ---
 name: SvelteKit with MDsvex
+date: 2025-11-11
 ---
 
 # Welcome to {name}
