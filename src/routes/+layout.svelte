@@ -4,22 +4,22 @@
 
   const postLinks = Object.keys(routes)
     .filter((route) => route.includes('./posts'))
-    .map((route = '') => route.substr(1).replace('/+page.md', ''));
+    .map((route = '') => route.substring(1).replace('/+page.md', ''));
   console.log('##', postLinks);
 </script>
 
-# home
-
-<a href="/">Home</a>
-
-# all posts:
-
-<ul>
-  {#each postLinks as post}
-    <li>
-      <a href={post}>{post.replace('/posts/', '')}</a>
-    </li>
-  {/each}
-</ul>
+<nav>
+  <a href="/">About Me</a>
+  <a href="/admin">(Edit)</a>
+  <br />
+  # all posts:
+  <ul>
+    {#each postLinks as post}
+      <li>
+        <a href={post}>{post.replace('/posts/', '')}</a>
+      </li>
+    {/each}
+  </ul>
+</nav>
 
 {@render children()}

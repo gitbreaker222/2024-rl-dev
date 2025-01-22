@@ -1,12 +1,17 @@
 <script>
-  let { children, date } = $props();
+  let { data, children, date, isPublic } = $props();
+  console.log('#', isPublic);
 </script>
-
-<nav>
-  <a href="/">About Me</a>
-  <a href="/admin">(Edit)</a>
-</nav>
 
 {new Date(date).toLocaleDateString()}
 
-{@render children?.()}
+<br />
+
+{#if isPublic}
+  {@render children?.()}
+{:else if data.NODE_ENV === 'development' && !isPublic}
+  <div><em>(Development preview / Unpublished content)</em></div>
+  {@render children?.()}
+{:else}
+  (Not yet published)
+{/if}

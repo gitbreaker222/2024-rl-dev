@@ -19,9 +19,11 @@ collections:
         name: "test"
         file: "src/routes/test/+page.md"
         fields:
+          - {label: Published, name: isPublic, widget: boolean}
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
           - label: Team
+            required: false
             name: team
             widget: list
             fields:
