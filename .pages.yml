@@ -16,7 +16,7 @@ content:
       - { name: rating, label: Rating (1 - 5), type: number, options: {min: 1, max: 5}}
       - { name: body, label: Body, type: rich-text }
     view:
-      - fields: [ title, isPublished, date]
+      fields: [ title, isPublished, date ]
   - name: settings
     label: Settings
     path: src/lib/settings.json
