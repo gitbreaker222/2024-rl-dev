@@ -6,6 +6,9 @@ content:
     path: src/routes/posts
     filename: '{year}-{month}-{day}-{primary}/+page.md'
     fields:
-      - { name: "layout", label: "Layout", hidden: true, type: string, default: "blog" }
-      - { name: "title", label: "Title", type: "string" }
-      - { name: "body", label: "Body", type: rich-text }
+      - { name: layout, label: Layout, hidden: true, type: string, default: "blog" }
+      - { name: title, label: Title, type: string }
+      - { name: date, label: Publish Date, type: date}
+      - { name: thumbnail, label: Featured Image, type: image}
+      - { name: rating, label: Rating (1 - 5), type: number, options: {min: 1, max: 5}}
+      - { name: body, label: Body, type: rich-text }
