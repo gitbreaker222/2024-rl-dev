@@ -1,4 +1,6 @@
-media: static/images/uploads
+media: 
+  input: static/images/uploads
+  output: images/uploads
 content:
   - name: blog
     label: Blog
