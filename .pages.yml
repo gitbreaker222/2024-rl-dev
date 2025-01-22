@@ -1,1 +1,10 @@
 media: static/images/uploads
+content:
+  - name: blog
+    label: Blog
+    type: collection
+    path: src/routes/posts
+    filename: '{year}-{month}-{day}-{primary}/+page.md'
+    fields:
+      - { name: "layout", label: "Layout", hidden: true, type: string, default: "blog" }
+      - { name: "title", label: "Title", type: "string" }
