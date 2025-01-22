@@ -1,5 +1,5 @@
 <script>
-  let { data, children, date, isPublic } = $props();
+  let { data, children, date, isPublic = true } = $props();
   console.log('#', isPublic);
 </script>
 

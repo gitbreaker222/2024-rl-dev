@@ -10,7 +10,19 @@ content:
     fields:
       - { name: layout, label: Layout, hidden: true, type: string, default: "blog" }
       - { name: title, label: Title, type: string }
+      - { name: isPublished, label: Published, type: boolean }
       - { name: date, label: Publish Date, type: date}
       - { name: thumbnail, label: Featured Image, type: image}
       - { name: rating, label: Rating (1 - 5), type: number, options: {min: 1, max: 5}}
       - { name: body, label: Body, type: rich-text }
+    view:
+      - fields: [ title, isPublished, date]
+  - name: settings
+    label: Settings
+    path: src/lib/settings.json
+    type: file
+    fields:
+      - name: mail
+        label: E-Mail
+        type: string
+        pattern: { message: 'This must be a valid email address (e.g. hello@example.com).', regex: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' }
