@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: test
-thumbnail: images/uploads/Reconquista_Internet_Emblem.png
+thumbnail: /images/uploads/Reconquista_Internet_Emblem.png
 rating: 1
 ---
 # asdf

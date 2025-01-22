@@ -1,6 +1,6 @@
 media: 
   input: static/images/uploads
-  output: images/uploads
+  output: /images/uploads
 content:
   - name: blog
     label: Blog
