@@ -5,7 +5,7 @@ content:
   - name: index
     label: Home
     type: file
-    path: src/pages
+    path: src/pages/index.md
     fields:
       - { name: body, label: Body, type: rich-text }
   - name: blog
