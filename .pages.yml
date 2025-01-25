@@ -1,14 +1,14 @@
 media: 
-  input: static/images/uploads
+  input: public/uploads
   output: /images/uploads
 content:
   - name: blog
     label: Blog
     type: collection
-    path: src/routes/posts
+    path: src/pages/posts
     filename: '{year}-{month}-{day}-{primary}.md'
     fields:
-      - { name: layout, label: Layout, hidden: true, type: string, default: "blog" }
+      - { name: layout, label: Layout, hidden: true, type: string, default: "@layouts/blog.astro" }
       - { name: title, label: Title, type: string }
       - { name: isPublished, label: Published, type: boolean }
       - { name: date, label: Publish Date, type: date}
@@ -19,7 +19,7 @@ content:
       fields: [ title, isPublished, date ]
   - name: settings
     label: Settings
-    path: src/lib/settings.json
+    path: src/pages/settings.json
     type: file
     fields:
       - name: mail

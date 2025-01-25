@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: '@layouts/blog.astro'
 title: test pages cms
 date: 2025-01-22
 thumbnail: /images/uploads/Reconquista_Internet_Emblem.png
