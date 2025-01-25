@@ -1,0 +1,27 @@
+---
+const { frontmatter } = Astro.props;
+console.log("##", frontmatter);
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title || "RL.dev"}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">home</a>
+        <a href="/hello-astro">Astro</a>
+        <a href="/posts/test222">Test 222</a>
+        <a href="/posts/2025-01-21-test">Test 1</a>
+      </nav>
+    </header>
+
+    <slot />
+  </body>
+</html>
