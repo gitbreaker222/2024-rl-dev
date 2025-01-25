@@ -4,8 +4,8 @@
 
   const postLinks = Object.keys(routes)
     .filter((route) => route.includes('./posts'))
-    .map((route = '') => route.substring(1).replace('/+page.md', ''));
-  console.log('##', postLinks);
+    .map((route = '') => route.substring(1).replace('.md', ''));
+  console.log('1');
 </script>
 
 <nav>
