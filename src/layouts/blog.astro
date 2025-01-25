@@ -1,6 +1,6 @@
 ---
 const { frontmatter } = Astro.props;
-console.log("##", frontmatter);
+const date = new Date(frontmatter.date).toLocaleDateString();
 ---
 
 <!doctype html>
@@ -18,7 +18,9 @@ console.log("##", frontmatter);
       <a href="/posts/test222">Test 222</a>
       <a href="/posts/2025-01-21-test">Test 1</a>
     </nav>
-    <h1>Blog {frontmatter.title}</h1>
+    <h1>
+      Blog {frontmatter.title}, {date}
+    </h1>
     <slot />
   </body>
 </html>
