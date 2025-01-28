@@ -1,17 +1,18 @@
 ---
+translationKey: 43d442f502e4.md
 layout: '@layouts/default.astro'
-title: RL.dev
+title: test home
 ---
 # Ruben La Biunda; Frontend Developer
 
-## Ich
+## Me
 
-## Lebenslauf
+## CV
 
-## Gallerie
+## Gallery
 
-## Design-Systeme
+## Design-Systems
 
-## Kontakt
+## Contact
 
-## Impressum
+## Imprint
