@@ -1,17 +1,27 @@
 ---
-layout: '@layouts/default.astro'
-title: RL.dev
 ---
-# Ruben La Biunda; Frontend Developer
+# **Ruben La Biunda; Frontend Developer**
 
-## Me
+## **Me**
 
-## CV
+## **CV**
 
-## Gallery
+## **Gallery**
 
-## Design-Systems
+## **Design-Systems**
 
-## Contact
+## **Contact**
 
-## Imprint
+## **Imprint**,# **Ruben La Biunda; Frontend Entwickler**
+
+## **Ich**
+
+## **Lebenslauf**
+
+## **Gallerie**
+
+## **Design-Systeme**
+
+## **Kontakt**
+
+## **Impressum**
