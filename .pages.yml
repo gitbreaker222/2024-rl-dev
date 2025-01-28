@@ -3,17 +3,18 @@ media:
   output: /images/uploads
 content:
   - name: index-en
-    label: Home
+    label: Home EN
     type: file
     path: src/pages/index.md
     fields:
       - { name: body, label: Body, type: rich-text }
   - name: index-de
-    label: Home
+    label: Home DE
     type: file
     path: src/pages/de/index.md
     fields:
       - { name: body, label: Body, type: rich-text }
+
   - name: blog
     label: Blog
     type: collection
@@ -29,6 +30,22 @@ content:
       - { name: body, label: Body, type: rich-text }
     view:
       fields: [ title, isPublished, date ]
+  - name: blog-de
+    label: Blog DE
+    type: collection
+    path: src/pages/de/posts
+    filename: '{year}-{month}-{day}-{primary}.md'
+    fields:
+      - { name: layout, label: Layout, hidden: true, type: string, default: "@layouts/blog.astro" }
+      - { name: title, label: Title, type: string }
+      - { name: isPublished, label: Published, type: boolean }
+      - { name: date, label: Publish Date, type: date}
+      - { name: thumbnail, label: Featured Image, type: image}
+      - { name: rating, label: Rating (1 - 5), type: number, options: {min: 1, max: 5}}
+      - { name: body, label: Body, type: rich-text }
+    view:
+      fields: [ title, isPublished, date ]
+
   - name: settings
     label: Settings
     path: src/pages/settings.json
