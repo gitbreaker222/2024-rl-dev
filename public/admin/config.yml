@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: gitbreaker222/2024-rl-dev
+  branch: sveltia
+  site_domain: cms.netlify.com
+
+i18n:
+  structure: multiple_folders
+  locales: [en, de]
+  default_locale: en
+
+media_folder: "public/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "index" # Used in routes, e.g., /admin/collections/blog
+    label: "Home" # Used in the UI
+    folder: "src/pages" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    slug: {{title | localize}}.md # Filename template, e.g., YYYY-MM-DD-title.md
+    i18n: true
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: '@layouts/default.astro' }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
