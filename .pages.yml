@@ -3,11 +3,11 @@ media:
   output: /images/uploads
 content:
   - name: index-en
-    label: Home EN
+    label: Home
     type: file
     path: src/pages/index.md
     fields:
-      - { name: body, label: Body, type: rich-text, list: true }
+      - { name: body, label: Body, type: rich-text }
   - name: index-de
     label: Home
     type: file
