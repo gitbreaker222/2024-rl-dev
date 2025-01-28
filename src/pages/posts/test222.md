@@ -1,6 +1,6 @@
 ---
 id: test123
-layout: '@layouts/Layout.astro'
+layout: '@layouts/default.astro'
 ---
 
-# 222 testetet {Astro.props.frontmatterid}
+# 222 testetet {id}

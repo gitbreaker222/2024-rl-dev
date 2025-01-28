@@ -4,14 +4,14 @@ title: RL.dev
 ---
 # Ruben La Biunda; Frontend Developer
 
-## Me
+## Ich
 
-## CV
+## Lebenslauf
 
-## Gallery
+## Gallerie
 
-## Design-Systems
+## Design-Systeme
 
-## Contact
+## Kontakt
 
-## Imprint
+## Impressum

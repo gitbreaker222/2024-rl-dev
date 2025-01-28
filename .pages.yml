@@ -2,10 +2,16 @@ media:
   input: public/uploads
   output: /images/uploads
 content:
-  - name: index
+  - name: index-en
     label: Home
     type: file
     path: src/pages/index.md
+    fields:
+      - { name: body, label: Body, type: rich-text }
+  - name: index-de
+    label: Home
+    type: file
+    path: src/pages/de/index.md
     fields:
       - { name: body, label: Body, type: rich-text }
   - name: blog
