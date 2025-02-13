@@ -1,3 +1,0 @@
-<svelte:head>
-  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
-</svelte:head>
