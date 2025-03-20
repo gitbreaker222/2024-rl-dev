@@ -10,18 +10,16 @@ const blogSchema = {
 	heroImage: z.string().optional(),
 }
 
-const blogEN = defineCollection({
-	// Load Markdown and MDX files in the `src/content/en/blog/` directory.
-	loader: glob({ base: './src/content/en/blog', pattern: '**/*.{md,mdx}' }),
-	// Type-check frontmatter using a schema
-	schema: z.object(blogSchema)
-});
+const defineBlogCollection = (locale = 'en') => {
+	return defineCollection({
+		// Load Markdown and MDX files in the `src/content/en/blog/` directory.
+		loader: glob({ base: `./src/content/${locale}/blog`, pattern: '**/*.{md,mdx}' }),
+		// Type-check frontmatter using a schema
+		schema: z.object(blogSchema)
+	});
+}
 
-const blogDE = defineCollection({
-	// Load Markdown and MDX files in the `src/content/de/blog/` directory.
-	loader: glob({ base: './src/content/de/blog', pattern: '**/*.{md,mdx}' }),
-	// Type-check frontmatter using a schema
-	schema: z.object(blogSchema)
-});
+const blogEN = defineBlogCollection('en')
+const blogDE = defineBlogCollection('de')
 
 export const collections = { blogEN, blogDE };
