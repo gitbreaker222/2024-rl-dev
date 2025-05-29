@@ -1,17 +1,30 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+
+const currentLocale = Astro.currentLocale || "";
+const rhref = (href = "") => getRelativeLocaleUrl(currentLocale, href);
+const currentUrl = Astro.url.pathname.replace(currentLocale + "/", "");
 
 const { title = SITE_TITLE } = Astro.props;
 ---
 
 <header>
   <nav>
-    <h2><a href="/">{title}</a></h2>
+    <h2>
+      <a href="/">{title}</a>
+    </h2>
     <div class="internal-links">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/ruben">ruben</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
+      <HeaderLink href={rhref("/")}>Home</HeaderLink>
+      <HeaderLink href={rhref("ruben")}>ruben</HeaderLink>
+      <HeaderLink href={rhref("about")}>About</HeaderLink> |
+      <HeaderLink href={getRelativeLocaleUrl("de", currentUrl)}>
+        [DE]
+      </HeaderLink>
+      <HeaderLink href={getRelativeLocaleUrl("en", currentUrl)}>
+        [EN]
+      </HeaderLink>
     </div>
     <div class="social-links">
       <a
