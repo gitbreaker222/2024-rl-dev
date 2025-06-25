@@ -1,0 +1,632 @@
+<style>
+  :root {
+    --space-y: 5rem;
+    --color-lo: #222;
+    --color-hi: #eee;
+    --color-A: rebeccapurple;
+    --color-dev: #7cbcbcbc;
+    --break-box-shadow: 0 -0.5rem inset;
+  }
+
+  /* UI-Board */
+  .ui-board section ~ section {
+    border-top: 2px solid;
+    padding-top: var(--space-y);
+    margin-top: var(--space-y);
+  }
+  .ui-board > h2 {
+    padding: var(--space-y) 1em 1em;
+  }
+
+  .ui-board .demo-bg,
+  .ui-board a h3 {
+    box-shadow: 0 0 0 1px var(--color-dev) inset;
+    background-image: repeating-linear-gradient(
+        90deg,
+        var(--color-dev) 0,
+        transparent 1px,
+        transparent 11px
+      ),
+      repeating-linear-gradient(
+        180deg,
+        var(--color-dev) 0,
+        transparent 1px,
+        transparent 11px
+      );
+  }
+
+  .ui-board dl {
+    display: block;
+    border: 1px solid var(--color-dev);
+    margin: 1rem 0;
+    padding: 0.2rem;
+  }
+
+  .ui-board dd {
+    border: 1px dashed var(--color-dev);
+  }
+
+  /* Breakpoints >>> */
+  .ui-board .breakpoints .xs::after {
+    content: "0px …";
+  }
+  .ui-board .breakpoints .sm::after {
+    content: "576px";
+  }
+  .ui-board .breakpoints .md::after {
+    content: "768px";
+  }
+  .ui-board .breakpoints .lg::after {
+    content: "992px";
+  }
+  .ui-board .breakpoints .xl::after {
+    content: "1200px";
+  }
+  .ui-board .breakpoints .xs {
+    box-shadow: var(--break-box-shadow);
+  }
+  @media (min-width: 576px) {
+    .ui-board .breakpoints .sm {
+      box-shadow: var(--break-box-shadow);
+    }
+  }
+  @media (min-width: 768px) {
+    .ui-board .breakpoints .md {
+      box-shadow: var(--break-box-shadow);
+    }
+  }
+  @media (min-width: 992px) {
+    .ui-board .breakpoints .lg {
+      box-shadow: var(--break-box-shadow);
+    }
+  }
+  @media (min-width: 1200px) {
+    .ui-board .breakpoints .xl {
+      box-shadow: var(--break-box-shadow);
+    }
+  }
+  /* Breakpoints <<< */
+</style>
+
+<div class="ui-board container">
+  <h2 class="demo-bg">Atoms</h2>
+  <section id="space">
+    <a href="#space">
+      <h3>Space:</h3>
+    </a>
+
+    <dl class="breakpoints">
+      <dt>Breakpoints</dt>
+      <dd>
+        <table>
+          <thead>
+            <tr>
+              <th>xs</th>
+              <th>sm</th>
+              <th>md</th>
+              <th>lg</th>
+              <th>xl</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="xs"></td>
+              <td class="sm"></td>
+              <td class="md"></td>
+              <td class="lg"></td>
+              <td class="xl"></td>
+            </tr>
+          </tbody>
+        </table>
+      </dd>
+    </dl>
+  </section>
+
+  <section id="palette">
+    <a href="#palette"> <h3>Color palette:</h3></a>
+
+    <p>Foreground on background colors with highlight between</p>
+
+    <style>
+      .color-demo--circle {
+        fill: none;
+        stroke: var(--color-A);
+        stroke-width: 4;
+      }
+      .color-demo--text {
+        font-size: 50px;
+        fill: currentColor;
+      }
+    </style>
+
+    <dl>
+      <dt>light, dark</dt>
+      <dd>
+        <svg
+          width="100"
+          height="100"
+          viewBox="0 0 100 100"
+          class="color-demo light"
+          style="
+            color: var(--color-lo);
+            background: var(--color-hi);"
+        >
+          <circle
+            cx="30"
+            cy="30"
+            r="25"
+            class="color-demo--circle"
+          ></circle>
+          <text
+            x="50%"
+            y="55%"
+            text-anchor="middle"
+            dominant-baseline="middle"
+            class="color-demo--text"
+            >Aa</text
+          >
+        </svg>
+        ,
+        <svg
+          width="100"
+          height="100"
+          viewBox="0 0 100 100"
+          class="color-demo light"
+          style="
+            color: var(--color-hi);
+            background: var(--color-lo);"
+        >
+          <circle
+            cx="30"
+            cy="30"
+            r="25"
+            class="color-demo--circle"
+          ></circle>
+          <text
+            x="50%"
+            y="55%"
+            text-anchor="middle"
+            dominant-baseline="middle"
+            class="color-demo--text"
+            >Aa</text
+          >
+        </svg>
+      </dd>
+    </dl>
+  </section>
+
+  <section id="typography">
+    <a href="#typography"> <h3>typography:</h3></a>
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <p>
+      paragraph Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Deleniti ad quae a voluptate molestiae suscipit velit facere vitae ut,
+      magnam eius fuga cum voluptates minus illum quos, recusandae magni eos.
+    </p>
+
+    <dl>
+      <dt>text.h1</dt>
+      <dd>
+        <span class="h1"> text </span>
+      </dd>
+    </dl>
+  </section>
+
+  <section id="inline-semantics">
+    <a href="#inline-semantics"> <h3>inline-semantics:</h3></a>
+
+    <dl>
+      <dt>a</dt>
+      <dd>
+        <a>anchor</a>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>abbr</dt>
+      <dd>
+        In short: <abbr title="abbreviation">abbr</abbr>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>strong / b</dt>
+      <dd>
+        <strong>strong</strong>
+        <b>bold</b>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>em</dt>
+      <dd>
+        <em>emphasize</em>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>s</dt>
+      <dd>
+        <s>strikethrough</s>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>u</dt>
+      <dd>
+        spelling <u>speling</u>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>sub</dt>
+      <dd>
+        Subscript O<sub>2</sub>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>sup</dt>
+      <dd>
+        Superscript m<sup>2</sup>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>code</dt>
+      <dd><code>Code</code></dd>
+    </dl>
+
+    <dl>
+      <dt>kbd</dt>
+      <dd>
+        <kbd>Ctrl</kbd>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>ruby, rb, rp, rt</dt>
+      <dd>
+        <ruby>
+          漢
+          <rp>(</rp>
+          <rt>Kan</rt>
+          <rp>)</rp>
+          字
+          <rp>(</rp>
+          <rt>ji</rt>
+          <rp>)</rp>
+        </ruby>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>time</dt>
+      <dd>
+        <time datetime="PT2H30M">2h 30m</time>
+      </dd>
+    </dl>
+  </section>
+
+  <section id="grouping">
+    <a href="#grouping"> <h3>grouping:</h3></a>
+
+    <dl>
+      <dt>pre</dt>
+      <dd>
+        <pre>preformatted</pre>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>blockquote cite</dt>
+      <dd>
+        <blockquote>
+          Never give up! Trust your instincts!
+          <cite>Peppy</cite>
+        </blockquote>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>ul ol li</dt>
+      <dd>
+        <ol>
+          <li>ordered list item</li>
+          <li>ordered list item</li>
+          <li>
+            ordered list item with nested ul
+            <ul>
+              <li>item lvl 2</li>
+              <li>item lvl 2</li>
+              <li>item lvl 2</li>
+            </ul>
+          </li>
+          <li>
+            ordered list item with nested ol
+            <ol>
+              <li>item lvl 2</li>
+              <li>item lvl 2</li>
+              <li>item lvl 2</li>
+            </ol>
+          </li>
+          <li>list item</li>
+        </ol>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>dl dt / dd</dt>
+      <dd>
+        <dl>
+          <dt>definition term</dt>
+          <dd>definition description</dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>figure / figcaption</dt>
+      <dd>
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1587023705107-290e07a2355a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
+            alt="brown and black speaker on brown wooden shelf"
+          />
+          <figcaption>By Susan Yin @syinq</figcaption>
+        </figure>
+      </dd>
+    </dl>
+  </section>
+
+  <section id="input">
+    <a href="#input"> <h3>input / form:</h3></a>
+
+    <dl>
+      <dt>button</dt>
+      <dd>
+        <button>button</button>
+      </dd>
+      <dt>button.button-outline</dt>
+      <dd>
+        <button class="button-outline">button</button>
+      </dd>
+      <dt>button.button-clear</dt>
+      <dd class="demo-bg">
+        <button class="btn button-clear">button</button>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>input[type=text]</dt>
+      <dd>
+        <label
+          >Wish:
+          <input
+            type="text"
+            placeholder="anything you like"
+          />
+        </label>
+      </dd>
+      <dt>input[type=number]</dt>
+      <dd>
+        <label>
+          How many puppies?
+          <input
+            type="number"
+            value="100"
+          />
+        </label>
+      </dd>
+      <dt>label.btn ~ input[type=file]</dt>
+      <dd>
+        <label
+          for="fileUpload"
+          class="btn"
+          >Upload File</label
+        >
+        <input
+          type="file"
+          id="fileUpload"
+          class="show-for-sr"
+        />
+      </dd>
+      <dt>input:invalid</dt>
+      <dd>
+        <input
+          type="number"
+          value="0"
+          min="1"
+        />
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>textarea</dt>
+      <dd>
+        <label>
+          What books did you read over summer break?
+          <textarea placeholder="None"></textarea>
+        </label>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>(fieldset legend) checkbox, radio</dt>
+      <dd>
+        <fieldset>
+          <legend>Choose Your Favorite</legend>
+          <input
+            type="radio"
+            name="pokemon"
+            value="Red"
+            id="pokemonRed"
+            required
+          /><label for="pokemonRed">Red</label>
+          <input
+            type="radio"
+            name="pokemon"
+            value="Blue"
+            id="pokemonBlue"
+          /><label for="pokemonBlue">Blue</label>
+          <input
+            type="radio"
+            name="pokemon"
+            value="Yellow"
+            id="pokemonYellow"
+          /><label for="pokemonYellow">Yellow</label>
+        </fieldset>
+        <fieldset>
+          <legend>Check these out</legend>
+          <input
+            id="checkbox1"
+            type="checkbox"
+          /><label for="checkbox1">Checkbox 1</label>
+          <input
+            id="checkbox2"
+            type="checkbox"
+          /><label for="checkbox2">Checkbox 2</label>
+          <input
+            id="checkbox3"
+            type="checkbox"
+          /><label for="checkbox3">Checkbox 3</label>
+        </fieldset>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>datalist</dt>
+      <dd>
+        <label for="ice-cream-choice">Choose a flavor:</label>
+        <input
+          list="ice-cream-flavors"
+          id="ice-cream-choice"
+          name="ice-cream-choice"
+        />
+        <datalist id="ice-cream-flavors">
+          <option value="Chocolate"> </option>
+          <option value="Mint"> </option>
+          <option value="Strawberry"> </option>
+          <option value="Vanilla"> </option>
+        </datalist>
+      </dd>
+
+      <dt>select</dt>
+      <dd>
+        <label
+          >Choose a flavor:
+          <select>
+            <option value="Chocolate">Chocolate</option>
+            <option value="Mint">Mint</option>
+            <option value="Strawberry">Strawberry</option>
+            <option value="Vanilla">Vanilla</option>
+          </select>
+        </label>
+      </dd>
+
+      <dt>select[multiple]</dt>
+      <dd>
+        <label
+          >Choose a flavor:
+          <select multiple>
+            <option value="Chocolate">Chocolate</option>
+            <option value="Mint">Mint</option>
+            <option value="Strawberry">Strawberry</option>
+            <option value="Vanilla">Vanilla</option>
+          </select>
+        </label>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>meter</dt>
+      <dd>
+        <label for="battery">Battery:</label>
+
+        <meter
+          id="battery"
+          min="0"
+          max="100"
+          low="33"
+          high="66"
+          optimum="80"
+          value="32"
+        >
+          at 50/100
+        </meter>
+        <meter
+          id="battery"
+          min="0"
+          max="100"
+          low="33"
+          high="66"
+          optimum="80"
+          value="50"
+        >
+          at 50/100
+        </meter>
+        <meter
+          id="battery"
+          min="0"
+          max="100"
+          low="33"
+          high="66"
+          optimum="80"
+          value="66"
+        >
+          at 50/100
+        </meter>
+      </dd>
+    </dl>
+
+    <dl>
+      <dt>progress:indeterminate</dt>
+      <dd>
+        <label for="progress0">Hacking system:</label>
+        <progress
+          id="progress0"
+          max="100"
+          indeterminate
+        >
+        </progress>
+      </dd>
+      <dt>progress[value=0]</dt>
+      <dd>
+        <label for="progress1">Hacking system:</label>
+        <progress
+          id="progress1"
+          max="100"
+          value="0"
+        >
+          0%
+        </progress>
+      </dd>
+      <dt>progress[value=50]</dt>
+      <dd>
+        <label for="progress2">Hacking system:</label>
+        <progress
+          id="progress2"
+          max="100"
+          value="50"
+        >
+          50%
+        </progress>
+      </dd>
+      <dt>progress[value=100]</dt>
+      <dd>
+        <label for="progress3">Hacking system:</label>
+        <progress
+          id="progress3"
+          max="100"
+          value="100"
+        >
+          100%
+        </progress>
+      </dd>
+    </dl>
+  </section>
+</div>
