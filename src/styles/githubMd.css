@@ -37,6 +37,10 @@
     display: table-header-group;
   }
 
+  td {
+    border-top: 1px solid currentColor
+  }
+
   tr,
   img {
     page-break-inside: avoid;
@@ -163,7 +167,7 @@ body {
 /* === A bit of a gross hack so we can have bleeding divs/blockquotes. */
 
 p,
-*:not(div):not(img):not(body):not(html):not(li):not(blockquote):not(p) {
+*:not(div):not(img):not(body):not(html):not(li):not(blockquote):not(p):not(hr) {
   margin: 1rem auto 1rem;
   max-width: 36rem;
   padding: .25rem;
