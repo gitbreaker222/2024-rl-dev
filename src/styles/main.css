@@ -4,6 +4,10 @@ Pico Semantic HTML Styles
 @import "https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css";
 
 /* Custom Styles */
+.text-center+* {
+  text-align: center;
+}
+
 .img-sm,
 img[src*="#img-sm"] {
   width: 200px

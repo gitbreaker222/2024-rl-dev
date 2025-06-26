@@ -11,13 +11,14 @@ const { title = SITE_TITLE } = Astro.props;
 ---
 
 <header>
+  <h2>
+    <a href="/">{title}</a>
+  </h2>
   <nav>
-    <h2>
-      <a href="/">{title}</a>
-    </h2>
     <div class="internal-links">
       <HeaderLink href={rhref("/")}>Home</HeaderLink>
-      <HeaderLink href={rhref("ruben")}>ruben</HeaderLink>
+      <HeaderLink href={rhref("ruben")}>Ruben</HeaderLink>
+      <HeaderLink href={rhref("admin")}>Admin</HeaderLink>
       <HeaderLink href={rhref("about")}>About</HeaderLink> |
       <HeaderLink href={getRelativeLocaleUrl("de", currentUrl)}>
         [DE]
