@@ -407,9 +407,9 @@
       <dd>
         <button>button</button>
       </dd>
-      <dt>button.button-outline</dt>
+      <dt>button.outline</dt>
       <dd>
-        <button class="button-outline">button</button>
+        <button class="outline">button</button>
       </dd>
       <dt>button.button-clear</dt>
       <dd class="demo-bg">
@@ -457,7 +457,10 @@
           type="number"
           value="0"
           min="1"
+          aria-invalid="true"
+          aria-describedby="invalid-helper"
         />
+        <small id="invalid-helper">Needs to be min 1</small>
       </dd>
     </dl>
 
