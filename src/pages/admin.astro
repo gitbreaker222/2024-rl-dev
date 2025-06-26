@@ -1,8 +1,21 @@
 ---
-import Layout from "@/layouts/MainLayout.astro";
+import Layout from "@/layouts/AdminLayout.astro";
+import { Alert, Button } from "flowbite-svelte";
 ---
 
 <Layout>
   <h1>Demo for Admin-UI</h1>
-  …
+
+  <Button
+    pill
+    color="alternative"
+    >Default</Button
+  >
+
+  <div class="p-8">
+    <Alert>
+      <span class="font-medium">Info alert!</span>
+      Change a few things up and try submitting again.
+    </Alert>
+  </div>
 </Layout>
