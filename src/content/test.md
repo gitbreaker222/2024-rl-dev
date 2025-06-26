@@ -146,7 +146,14 @@ Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
 
 ## Images
 
-![Minion](https://octodex.github.com/images/minion.png){.img-sm}
+![Minion](https://octodex.github.com/images/minion.png)
+
+![Minion](https://octodex.github.com/images/minion.png#img-sm)
+
+<img alt="Minion" src="https://octodex.github.com/images/minion.png" width="200">
+
+With a title attribute after the src
+
 ![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
 Like links, Images also have a footnote style syntax
