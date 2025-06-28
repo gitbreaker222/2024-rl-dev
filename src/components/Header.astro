@@ -1,31 +1,83 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { i18n } from "astro:config/server";
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 
-const currentLocale = Astro.currentLocale || "";
+const navLinks = [
+  { href: "/", multiLang: true },
+  { href: "/lorem", multiLang: true },
+  { href: "/ui-test", multiLang: false },
+  { href: "/admin", multiLang: false },
+];
+
+const { currentLocale = "" } = Astro;
+const normalizeRoute = (url = "") => {
+  /*
+  console.log(normalizeRoute("/en/lorem/")); // "/lorem"
+  console.log(normalizeRoute("/en/lorem")); // "/lorem"
+  console.log(normalizeRoute("/lorem/")); // "/lorem"
+  console.log(normalizeRoute("/lorem")); // "/lorem"
+  console.log(normalizeRoute("/de/lorem")); // "/lorem"
+  console.log(normalizeRoute("/")); // "/"
+  console.log(normalizeRoute("/en/")); // "/"
+  */
+  let normalizedRoute = url.trim();
+
+  if (!normalizedRoute.startsWith("/")) {
+    normalizedRoute = "/" + normalizedRoute;
+  }
+
+  if (normalizedRoute.length > 1 && normalizedRoute.endsWith("/")) {
+    normalizedRoute = normalizedRoute.slice(0, -1);
+  }
+
+  i18n?.locales.some((locale) => {
+    const localePrefix = "/" + locale;
+    if (normalizedRoute.startsWith(localePrefix)) {
+      normalizedRoute = normalizedRoute.slice(localePrefix.length);
+      !normalizedRoute.length && (normalizedRoute = "/");
+      return true;
+    }
+  });
+
+  return normalizedRoute;
+};
+
 const rhref = (href = "") => getRelativeLocaleUrl(currentLocale, href);
 const currentUrl = Astro.url.pathname.replace(currentLocale + "/", "");
-
 const { title = SITE_TITLE } = Astro.props;
+const showLangSwitch = navLinks.some((item) => {
+  if (normalizeRoute(Astro.url.pathname) === item.href) {
+    return item.multiLang;
+  }
+});
 ---
 
 <header>
   <h2>
-    <a href="/">{title}</a>
+    <HeaderLink href={rhref("/")}>{title}</HeaderLink>
   </h2>
   <nav>
     <div class="internal-links">
-      <HeaderLink href={rhref("Lorem")}>Multi-Lang Test</HeaderLink>
-      <HeaderLink href="/test">UI Styling Test</HeaderLink>
+      <HeaderLink href={rhref("/lorem")}>Multi-Lang Test</HeaderLink>,
+      <HeaderLink href="/ui-test">UI Styling Test</HeaderLink>,
       <HeaderLink href="/admin">Admin</HeaderLink>
-      |
-      <HeaderLink href={getRelativeLocaleUrl("de", currentUrl)}>
-        [DE]
-      </HeaderLink>
-      <HeaderLink href={getRelativeLocaleUrl("en", currentUrl)}>
-        [EN]
-      </HeaderLink>
+      {
+        showLangSwitch && (
+          <div>
+            |{" "}
+            <HeaderLink href={getRelativeLocaleUrl("de", currentUrl)}>
+              {" "}
+              [DE]{" "}
+            </HeaderLink>
+            <HeaderLink href={getRelativeLocaleUrl("en", currentUrl)}>
+              {" "}
+              [EN]{" "}
+            </HeaderLink>
+          </div>
+        )
+      }
     </div>
   </nav>
 </header>

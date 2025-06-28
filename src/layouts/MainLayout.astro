@@ -17,7 +17,9 @@ const currentLocale = Astro.currentLocale || "";
   </head>
   <body class="container">
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
