@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/", multiLang: true },
   { href: "/lorem", multiLang: true },
   { href: "/ui-test", multiLang: false },
+  { href: "/styling", multiLang: false },
   { href: "/admin", multiLang: false },
 ];
 
@@ -55,29 +56,35 @@ const showLangSwitch = navLinks.some((item) => {
 ---
 
 <header>
-  <h2>
-    <HeaderLink href={rhref("/")}>{title}</HeaderLink>
-  </h2>
+  <div class="grid">
+    <h2>
+      <HeaderLink href={rhref("/")}>{title}</HeaderLink>
+    </h2>
+    {
+      showLangSwitch && (
+        <span>
+          |{" "}
+          <HeaderLink href={getRelativeLocaleUrl("de", currentUrl)}>
+            [DE]
+          </HeaderLink>
+          <HeaderLink href={getRelativeLocaleUrl("en", currentUrl)}>
+            [EN]
+          </HeaderLink>
+        </span>
+      )
+    }
+  </div>
   <nav>
     <div class="internal-links">
       <HeaderLink href={rhref("/lorem")}>Multi-Lang Test</HeaderLink>,
-      <HeaderLink href="/ui-test">UI Styling Test</HeaderLink>,
+      <HeaderLink href="/ui-test">UI Test</HeaderLink>,
+      <HeaderLink href="/styling">HTML Atoms</HeaderLink>,
       <HeaderLink href="/admin">Admin</HeaderLink>
-      {
-        showLangSwitch && (
-          <div>
-            |{" "}
-            <HeaderLink href={getRelativeLocaleUrl("de", currentUrl)}>
-              {" "}
-              [DE]{" "}
-            </HeaderLink>
-            <HeaderLink href={getRelativeLocaleUrl("en", currentUrl)}>
-              {" "}
-              [EN]{" "}
-            </HeaderLink>
-          </div>
-        )
-      }
     </div>
   </nav>
 </header>
+<style>
+  .grid {
+    grid-template-columns: 1fr auto;
+  }
+</style>
