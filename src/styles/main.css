@@ -10,5 +10,7 @@ Pico Semantic HTML Styles
 
 .img-sm,
 img[src*="#img-sm"] {
-  width: 200px
+  width: auto;
+  height: 300px;
+  object-fit: contain;
 }
