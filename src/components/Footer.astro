@@ -1,9 +1,21 @@
 ---
+import childProcess from "child_process";
+import { version } from "../../package.json";
 const today = new Date();
+// obtain Git commit hash
+const hash = childProcess
+  .execSync("git rev-parse --short HEAD")
+  .toString()
+  .trim();
 ---
 
 <hr />
 <footer>
   &copy; {today.getFullYear()} Ruben La Biunda. All rights reserved.
   <a href="/impressum">Impressum</a>
+  <p>
+    <a href={`https://github.com/gitbreaker222/2024-rl-dev/commit/${hash}`}>
+      <small>version: {version} - {today.toLocaleDateString()}</small>
+    </a>
+  </p>
 </footer>
