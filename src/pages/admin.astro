@@ -1,14 +1,11 @@
 ---
 import Layout from "@/layouts/AdminLayout.astro";
-import AdminPanel from '@/components/admin-panel.svelte'
+import AdminPanel from "@/components/admin-panel.svelte";
 ---
 
 <Layout>
-  <h1>Demo for Admin-UI with <a href="">flowbite</a> components</h1>
-  <em>(work in progress)</em>
-  <AdminPanel client:load></AdminPanel>
+  <AdminPanel
+    client:load
+    url={Astro.url}
+  />
 </Layout>
-
-<style>
-  .asdf 
-</style>
