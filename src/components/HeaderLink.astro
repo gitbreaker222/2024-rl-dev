@@ -1,14 +1,9 @@
 ---
-import { i18n } from "astro:config/server";
 const { BASE_URL } = import.meta.env;
 
 const { href, class: className, ...props } = Astro.props;
 const _href = href.endsWith("/") ? href : href + "/";
 const pathname = Astro.url.pathname.replace(BASE_URL, "");
-const subpath = pathname.match(/[^\/]+/g);
-
-console.log(_href === `/${pathname}`, _href);
-//const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 const isActive = _href === `/${pathname}`;
 ---
 
