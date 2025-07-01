@@ -15,7 +15,7 @@ const hash = childProcess
   <a href="/impressum">Impressum</a>
   <p>
     <a href={`https://github.com/gitbreaker222/2024-rl-dev/commit/${hash}`}>
-      <small>version: {version} - {today.toLocaleDateString()}</small>
+      <small>version: {version} - {today.toISOString().split("T")[0]}</small>
     </a>
   </p>
 </footer>
