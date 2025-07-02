@@ -1,11 +1,11 @@
 ---
-title: 'Lorem DE'
+title: 'Lorem EN'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: '2024-06-22'
-heroImage: '/blog-placeholder-about.jpg'
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
-DE Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+EN Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
 viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
 adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus

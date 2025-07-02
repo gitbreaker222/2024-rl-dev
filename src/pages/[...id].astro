@@ -14,8 +14,19 @@ export async function getStaticPaths() {
 
 const page = Astro.props;
 const { Content } = await render(page);
+console.log(page.data.heroImage);
 ---
 
 <Layout {...page.data}>
+  {
+    page.data.heroImage ? (
+      <img
+        src={page.data.heroImage}
+        alt=""
+      />
+    ) : (
+      ""
+    )
+  }
   <Content />
 </Layout>
