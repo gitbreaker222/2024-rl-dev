@@ -6,9 +6,13 @@ import Footer from "@/components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 
 const currentLocale = Astro.currentLocale || "";
+const theme = "dark";
 ---
 
-<html lang={currentLocale}>
+<html
+  lang={currentLocale}
+  data-theme={theme}
+>
   <head>
     <BaseHead
       title={SITE_TITLE}
