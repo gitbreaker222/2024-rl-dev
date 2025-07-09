@@ -1,10 +1,13 @@
 ---
 const { BASE_URL } = import.meta.env;
 
+const stripOuterSlashes = (s = "") => s.replace(/^\//, "").replace(/\/$/, "");
+
 const { href, class: className, ...props } = Astro.props;
-const _href = href.endsWith("/") ? href : href + "/";
 const pathname = Astro.url.pathname.replace(BASE_URL, "");
-const isActive = _href === `/${pathname}`;
+const _href = stripOuterSlashes(href);
+const _pathname = stripOuterSlashes(pathname);
+const isActive = _href === _pathname;
 ---
 
 <a

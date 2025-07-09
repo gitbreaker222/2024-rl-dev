@@ -3,30 +3,33 @@ import { getCollection, render } from "astro:content";
 import Layout from "@/layouts/MainLayout.astro";
 
 export async function getStaticPaths() {
-  const pages = await getCollection("markdownPage");
+  const pages = await getCollection("contentLocalized");
   return pages.map((page) => {
+    const { id } = page;
     return {
-      params: { id: page.id },
+      params: { idLocalized: id },
       props: page,
     };
   });
 }
 
 const page = Astro.props;
+const frontmatter = page.data;
+const { heroImage } = frontmatter;
 const { Content } = await render(page);
-console.log(page.data.heroImage);
 ---
 
-<Layout {...page.data}>
+<Layout
+  {...frontmatter}
+  multilang
+>
   {
-    page.data.heroImage ? (
+    heroImage && (
       <img
-        src={page.data.heroImage}
+        src={heroImage}
         alt=""
         class="hero-img"
       />
-    ) : (
-      ""
     )
   }
   <Content />
