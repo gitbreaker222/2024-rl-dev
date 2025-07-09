@@ -5,6 +5,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 
+const { multilang } = Astro.props;
 const currentLocale = Astro.currentLocale || "";
 const theme = "dark";
 ---
@@ -20,7 +21,7 @@ const theme = "dark";
     />
   </head>
   <body class="container">
-    <Header />
+    <Header multilang={multilang} />
     <main>
       <slot />
     </main>

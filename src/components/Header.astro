@@ -1,69 +1,33 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { i18n } from "astro:config/server";
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 
-const navLinks = [
-  { href: "/", multiLang: true },
-  { href: "/lorem", multiLang: true },
-  { href: "/ui-test", multiLang: false },
-  { href: "/styling", multiLang: false },
-  { href: "/admin", multiLang: false },
-];
-
 const { currentLocale = "" } = Astro;
-const normalizeRoute = (url = "") => {
-  /*
-  console.log(normalizeRoute("/en/lorem/")); // "/lorem"
-  console.log(normalizeRoute("/en/lorem")); // "/lorem"
-  console.log(normalizeRoute("/lorem/")); // "/lorem"
-  console.log(normalizeRoute("/lorem")); // "/lorem"
-  console.log(normalizeRoute("/de/lorem")); // "/lorem"
-  console.log(normalizeRoute("/")); // "/"
-  console.log(normalizeRoute("/en/")); // "/"
-  */
-  let normalizedRoute = url.trim();
-
-  if (!normalizedRoute.startsWith("/")) {
-    normalizedRoute = "/" + normalizedRoute;
-  }
-
-  if (normalizedRoute.length > 1 && normalizedRoute.endsWith("/")) {
-    normalizedRoute = normalizedRoute.slice(0, -1);
-  }
-
-  i18n?.locales.some((locale) => {
-    const localePrefix = "/" + locale;
-    if (normalizedRoute.startsWith(localePrefix)) {
-      normalizedRoute = normalizedRoute.slice(localePrefix.length);
-      !normalizedRoute.length && (normalizedRoute = "/");
-      return true;
-    }
-  });
-
-  return normalizedRoute;
-};
+const { multilang } = Astro.props
 
 const rhref = (href = "") => getRelativeLocaleUrl(currentLocale, href);
 const currentUrl = Astro.url.pathname.replace(currentLocale + "/", "");
+console.log('#1', currentUrl, currentLocale);
+
 const { title = SITE_TITLE } = Astro.props;
-const showLangSwitch = navLinks.some((item) => {
-  if (normalizeRoute(Astro.url.pathname) === item.href) {
-    return item.multiLang;
-  }
-});
+
+const t_about = {
+  de: "Über diese Seite",
+  en: "About this page",
+}[currentLocale];
 ---
 
 <header>
-  <div class="grid">
+  <nav class="grid">
     <h2>
-      <HeaderLink href={rhref("/")}>{title}</HeaderLink>
+      <HeaderLink href={rhref("/home")}>{title}</HeaderLink>
     </h2>
+    <HeaderLink href={rhref("/about")}>{t_about}</HeaderLink>
     {
-      showLangSwitch && (
+      multilang && (
+        <span>|</span>
         <span>
-          |{" "}
           <HeaderLink href={getRelativeLocaleUrl("de", currentUrl)}>
             [DE]
           </HeaderLink>
@@ -73,7 +37,7 @@ const showLangSwitch = navLinks.some((item) => {
         </span>
       )
     }
-  </div>
+  </nav>
   <nav>
     <div class="internal-links">
       <HeaderLink href={rhref("/lorem")}>Multi-Lang Test</HeaderLink>,
@@ -86,5 +50,8 @@ const showLangSwitch = navLinks.some((item) => {
 <style>
   .grid {
     grid-template-columns: 1fr auto;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    align-items: baseline;
   }
 </style>
