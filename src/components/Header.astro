@@ -2,13 +2,15 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+import { stripTrailingSlash as sts } from "@/components/util";
 
 const { currentLocale = "" } = Astro;
-const { multilang } = Astro.props
+const { multilang } = Astro.props;
 
 const rhref = (href = "") => getRelativeLocaleUrl(currentLocale, href);
-const currentUrl = Astro.url.pathname.replace(currentLocale + "/", "");
-console.log('#1', currentUrl, currentLocale);
+const currentPath = Astro.url.pathname
+const currentPathNoLocale = currentPath.replace(currentLocale + "/", "");
+const showDevLinks = sts(currentPath).endsWith('/about')
 
 const { title = SITE_TITLE } = Astro.props;
 
@@ -24,28 +26,26 @@ const t_about = {
       <HeaderLink href={rhref("/home")}>{title}</HeaderLink>
     </h2>
     <HeaderLink href={rhref("/about")}>{t_about}</HeaderLink>
-    {
-      multilang && (
-        <span>|</span>
-        <span>
-          <HeaderLink href={getRelativeLocaleUrl("de", currentUrl)}>
-            [DE]
-          </HeaderLink>
-          <HeaderLink href={getRelativeLocaleUrl("en", currentUrl)}>
-            [EN]
-          </HeaderLink>
-        </span>
-      )
-    }
-  </nav>
-  <nav>
-    <div class="internal-links">
-      <HeaderLink href={rhref("/lorem")}>Multi-Lang Test</HeaderLink>,
-      <HeaderLink href="/ui-test">MD UI Test</HeaderLink>,
-      <HeaderLink href="/styling">HTML Atoms</HeaderLink>,
-      <HeaderLink href="/admin">Admin</HeaderLink>
-    </div>
-  </nav>
+    {multilang && (
+      <span>|</span>
+      <span>
+        <HeaderLink href={getRelativeLocaleUrl("de", currentPathNoLocale)}>
+          [DE]
+        </HeaderLink>
+        <HeaderLink href={getRelativeLocaleUrl("en", currentPathNoLocale)}>
+          [EN]
+        </HeaderLink>
+      </span>
+    )}
+    </nav>
+    {showDevLinks && (
+      <div>
+        <HeaderLink href={rhref("/lorem")}>Multi-Lang Test</HeaderLink>,
+        <HeaderLink href="/ui-test">MD UI Test</HeaderLink>,
+        <HeaderLink href="/styling">HTML Atoms</HeaderLink>,
+        <HeaderLink href="/admin">Admin</HeaderLink>
+      </div>
+    )}
 </header>
 <style>
   .grid {

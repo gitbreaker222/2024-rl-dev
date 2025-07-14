@@ -1,17 +1,15 @@
 ---
-const { BASE_URL } = import.meta.env;
-
-const stripOuterSlashes = (s = "") => s.replace(/^\//, "").replace(/\/$/, "");
+import { stripTrailingSlash as sts } from "@/components/util";
 
 const { href, class: className, ...props } = Astro.props;
-const pathname = Astro.url.pathname.replace(BASE_URL, "");
-const _href = stripOuterSlashes(href);
-const _pathname = stripOuterSlashes(pathname);
-const isActive = _href === _pathname;
+const currentRoute = Astro.url.pathname
+
+const isActive = sts(href) === sts(currentRoute)
+
 ---
 
 <a
-  href={_href}
+  href={href}
   class:list={[className, { active: isActive }]}
   {...props}
 >
