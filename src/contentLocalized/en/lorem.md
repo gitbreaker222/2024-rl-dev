@@ -3,6 +3,7 @@ title: 'Lorem EN'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: '2024-06-22'
 heroImage: '/blog-placeholder-2.jpg'
+showDevLinks: true
 ---
 
 EN Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

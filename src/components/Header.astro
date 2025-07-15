@@ -2,15 +2,13 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
-import { stripTrailingSlash as sts } from "@/components/util";
 
 const { currentLocale = "" } = Astro;
-const { multilang } = Astro.props;
+const { multilang, showDevLinks } = Astro.props;
 
 const rhref = (href = "") => getRelativeLocaleUrl(currentLocale, href);
 const currentPath = Astro.url.pathname
 const currentPathNoLocale = currentPath.replace(currentLocale + "/", "");
-const showDevLinks = sts(currentPath).endsWith('/about')
 
 const { title = SITE_TITLE } = Astro.props;
 

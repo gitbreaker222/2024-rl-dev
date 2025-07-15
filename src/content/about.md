@@ -1,4 +1,5 @@
 ---
+showDevLinks: true
 ---
 
 # Über diese Seite
