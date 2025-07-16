@@ -7,6 +7,7 @@ Pico Semantic HTML Styles
 [data-theme=dark] {
   --pico-primary: #a954fd;
   --pico-primary-background: rebeccapurple;
+  --pico-primary-underline: rebeccapurple;
 }
 
 /*
