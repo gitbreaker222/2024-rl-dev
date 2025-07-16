@@ -10,6 +10,30 @@ Pico Semantic HTML Styles
   --pico-primary-underline: rebeccapurple;
 }
 
+
+details {
+  box-shadow: 0 0 0;
+  transition: box-shadow 150ms;
+  padding: .5rem;
+}
+
+details[open] {
+  box-shadow: 0 0 5px -1px currentColor;
+}
+
+details summary {
+  padding-inline-end: 2rem;
+  position: relative;
+}
+
+details summary::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 2rem;
+  background-size: 2rem auto;
+}
+
 /*
 Custom Styles 
 */
