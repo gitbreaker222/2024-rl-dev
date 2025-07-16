@@ -12,7 +12,7 @@ Die Inhalte können auf mehreren Sprachen gepflegt werden. Die Startseite unter 
 
 ## Version marker
 
-Im Footer gibt es einen generierten Versionsmarker. Das hilft beim Abgleich verschiedener Auslieferungs-Stände, wenn verschiedene Leute (Devs, Kunden, End-user) die Anwenung in verschiedenen Kontexten benutzen.
+Im Footer gibt es einen generierten Versionsmarker. Das hilft beim Abgleich verschiedener Auslieferungs-Stände, wenn verschiedene Leute (Devs, Kunden, End-user) die Anwendung in verschiedenen Kontexten benutzen.
 
 Außerdem ist die Version mit dem commit im Quellcode verlinkt.
 
