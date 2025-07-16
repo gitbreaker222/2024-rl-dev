@@ -16,11 +16,9 @@ Im Footer gibt es einen generierten Versionsmarker. Das hilft beim Abgleich vers
 
 Außerdem ist die Version mit dem commit im Quellcode verlinkt.
 
-## Serverside / Clientside Rendering
+## Serverside / Clientside rendering
 
-SSG with SSR and interactive (Svelte) 
-
-Die Seite ist mit dem Static-Site-Generator (SSG) [Astro JS](https://astro.build/) erstellt. Die Seiten werden aus dem Quellcode einmal zusammengebaut und dann als Statische-Webseite auf dem Server gehostet. Das fertige HTML kann effizienter ausgespielt werden, als eine Client-Seite Anwendung, bei der auf dem Gerät des users das UI mit JS fertig gerendert wird.
+Die Seite ist mit dem Static-Site-Generator (SSG) [Astro JS](https://astro.build/) erstellt. Die Seiten werden aus dem Quellcode serverseitig einmal zusammengebaut / gerendert (SSR) und dann als Statische-Webseite auf dem Server gehostet. Das fertige HTML kann effizienter ausgespielt werden, als eine Client-Seite Anwendung, bei der auf dem Gerät des users das UI mit JS fertig gerendert wird.
 
 Dennoch können auch interaktive Components eingesetzt werden. Dafür können verschieden Frontend-Frameworks wie z.B. [Svelte](https://svelte.dev) integriert werden. Siehe [Flowbite…](#advanced-ui-with-flowbite-components) unten
 
@@ -30,25 +28,29 @@ Für das Styling wollte ich so wenig CSS wie möglich schreiben und eine fertige
 
 [PicoCSS](https://picocss.com/) ist kleines Framework das auf semantisches HTML ausgerichtet ist. Die Styles können also auf ganz normal strukuriertes HTML angewendet werden, ohne dass CSS-Klassen etwa Listen gesetzt werden müssen. Es gibt aber auch Klassen, die z.B. in den .astro-files zum layouten genutzt werden können. Außerdem eine Reihe an CSS-Variablen, mit denen sich das Theme gestalten lässt.
 
-## Advanced UI with Flowbite Components
+## Fortgeschrittenes UI mit Flowbite Components
 
-Für einfache Seiten mit Fokus auf Text reicht es MarkDown zu stylen. Für viele Dinge braucht man aber komplexere UI-Komponenten - etwa für Administrations-Oberflächen. Für digitale Formulare und andere datenintensive Anwendungen gibt es immer wieder ähnliche Anforderungen, die in Design-Systemen wie Material-Design (google), Carbon (IBM) oder [lightning (salesforce)](lightning) fertig ausgearbeitet sind. Nicht nur das grafische Design, sondern die ganze Handhabung von Maus bis touch, smartphone-screen bis beamer.
+Für einfache Seiten mit Fokus auf Text reicht es MarkDown zu stylen. Für viele Dinge braucht man aber komplexere UI-Komponenten - etwa für Administrations-Oberflächen. Für digitale Formulare und andere datenintensive Anwendungen gibt es immer wieder ähnliche Anforderungen, die in Design-Systemen wie [Material-Design (google)][material], [Carbon (IBM)][carbon] oder [lightning (salesforce)][lightning] fertig ausgearbeitet sind. Nicht nur das grafische Design, sondern die ganze Handhabung von Maus bis touch, Smartphone-screen bis Stage-LED-Wand.
 
-Ich habe mich für diese Seite darüber hinaus dafür interessiert, ob es auch professionelle Lösung gibt abseits der typischen U.S.-Tech-Giganten gibt, um problematischen Abhängigkeiten vorzubeugen.
+Flowbite scheint mir dafür sehr gut geeignet, ist open-source, supportet alle gängigen Frontend-Frameworks und baut auf dem bewärten Tailwind-System auf 
 
-Flowbite aus Ungarn scheint mir dafür sehr gut geeignet, ist open-source, supportet alle gängigen Frontend-Frameworks und baut auf dem bewärten Tailwind-System auf 
-
+[material]: https://m3.material.io/
+[carbon]: https://carbondesignsystem.com/
 [lightning]: https://www.lightningdesignsystem.com/
 
-## Curated Software Sources
+## Bedachte Software-Quellen
 
-TODO
+Ich habe mich für diese Seite darüber hinaus dafür interessiert, ob es auch professionelle Lösung gibt abseits der typischen US-Tech-Giganten gibt, um gegen problematischen Abhängigkeiten / Entwicklungen resilient zu sein. Aber auch um selbst mein Bewusstsein dafür zu weiten, Europa als Software-Standort verstehen zu lernen.
 
-- Flowbite from Hungary alternative to Material Design (google / alphabet)
-- Svelte alternative to react (Facebook / meta)
+- Flowbite ![eu][e-eu]![hu][e-hu] alternative to Material Design (google / alphabet)
+- Svelte alternative to react (facebook / meta)
+
+Weiter wäre es auch in diesem Sinne z.B. auf gitlab ![eu][e-eu]![nl][e-nl] zu hosten, statt auf github (microsoft)...
 
 ## Easter Eggs
 
-TODO
+Schau mal auf den Fax Link in der Kontak-Info. Die Emoji-Bibliothek dahinter wurde and der Hochschule für Gestaltung Schwäbisch Gmünd entwickelt.
 
-Checkout the Fax link in the contact info. The emoji library behind that is made at the Hochschule für Gestaltung Schwäbisch Gmünd
+[e-eu]: /emoji/eu.svg
+[e-hu]: /emoji/hu.svg
+[e-nl]: /emoji/nl.svg

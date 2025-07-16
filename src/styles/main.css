@@ -27,3 +27,8 @@ img[src*="#img-sm"] {
   height: 300px;
   object-fit: contain;
 }
+
+img[src^="/emoji"] {
+  width: auto;
+  height: 1.2em;
+}
