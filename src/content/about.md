@@ -30,13 +30,16 @@ Für das Styling wollte ich so wenig CSS wie möglich schreiben und eine fertige
 
 ## Fortgeschrittenes UI mit Flowbite Components
 
+Kleine Component Demo unter [admin](/admin).
+
 Für einfache Seiten mit Fokus auf Text reicht es MarkDown zu stylen. Für viele Dinge braucht man aber komplexere UI-Komponenten - etwa für Administrations-Oberflächen. Für digitale Formulare und andere datenintensive Anwendungen gibt es immer wieder ähnliche Anforderungen, die in Design-Systemen wie [Material-Design (google)][material], [Carbon (IBM)][carbon] oder [lightning (salesforce)][lightning] fertig ausgearbeitet sind. Nicht nur das grafische Design, sondern die ganze Handhabung von Maus bis touch, Smartphone-screen bis Stage-LED-Wand.
 
-Flowbite scheint mir dafür sehr gut geeignet, ist open-source, supportet alle gängigen Frontend-Frameworks und baut auf dem bewärten Tailwind-System auf 
+[**Flowbite**][flowbite] scheint mir dafür sehr gut geeignet, ist open-source, baut auf dem bewärten Tailwind-System auf und kann dadurch _alle_ gängigen Frontend-Frameworks unterstüten. Ich bin begeistert! 
 
 [material]: https://m3.material.io/
 [carbon]: https://carbondesignsystem.com/
 [lightning]: https://www.lightningdesignsystem.com/
+[flowbite]: https://flowbite.com/
 
 ## Bedachte Software-Quellen
 
