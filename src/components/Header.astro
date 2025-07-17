@@ -4,7 +4,7 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 
 const { currentLocale = "" } = Astro;
-const { multilang, showDevLinks } = Astro.props;
+const { multilang, showDevLinks, ...rest } = Astro.props;
 
 const rhref = (href = "") => getRelativeLocaleUrl(currentLocale, href);
 const currentPath = Astro.url.pathname
@@ -18,7 +18,7 @@ const t_about = {
 }[currentLocale];
 ---
 
-<header>
+<header {...rest}>
   <nav class="grid">
     <h2>
       <HeaderLink href={rhref("/home")}>{title}</HeaderLink>

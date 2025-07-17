@@ -22,6 +22,7 @@ const theme = "dark";
   </head>
   <body class="container">
     <Header
+      class="head"
       multilang={multilang}
       showDevLinks={showDevLinks}
     />
@@ -31,3 +32,12 @@ const theme = "dark";
     <Footer />
   </body>
 </html>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--pico-background-color);
+    box-shadow: 0 1rem 1rem -1rem var(--pico-background-color);
+  }
+</style>
