@@ -8,7 +8,6 @@
     SidebarBrand,
     uiHelpers,
     CloseButton,
-    Checkbox,
   } from "flowbite-svelte";
   import {
     ChartOutline,
@@ -41,9 +40,6 @@
   const toggleAlert = () => {
     showAlert = !showAlert;
   };
-
-  //Checkbox
-  let isChecked = true;
 </script>
 
 <header class="relative p-2">
@@ -154,11 +150,5 @@
         Change a few things up and try submitting again.
       </Alert>
     {/if}
-  </div>
-
-  <div>
-    <Checkbox>Default checkbox</Checkbox>
-    <Checkbox checked={isChecked}>Checked state</Checkbox>
-    <Checkbox indeterminate>Indeterminate state</Checkbox>
   </div>
 </main>
