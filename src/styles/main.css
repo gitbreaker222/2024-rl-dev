@@ -10,6 +10,9 @@ Pico Semantic HTML Styles
   --pico-primary-underline: rebeccapurple;
 }
 
+:root {
+  --elevation-1: 10;
+}
 
 details {
   box-shadow: 0 0 0;
