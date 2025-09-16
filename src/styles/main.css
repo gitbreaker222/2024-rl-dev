@@ -27,12 +27,11 @@ details[open] {
 details summary {
   padding-inline-end: 2rem;
   position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
 details summary::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
   width: 2rem;
   background-size: 2rem auto;
 }
