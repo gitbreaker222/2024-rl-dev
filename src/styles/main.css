@@ -4,6 +4,16 @@ Pico Semantic HTML Styles
 @import "https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css";
 
 /* Pico overrides */
+:host(:not([data-theme="dark"])),
+:root:not([data-theme="dark"]),
+[data-theme="light"] {
+  --pico-primary: hsl(270, 50%, 40%);
+  --pico-primary-background: rebeccapurple;
+  --pico-primary-underline: hsl(270, 50%, 40%);
+  --pico-primary-hover: hsl(270, 50%, 20%);
+  --pico-primary-hover-underline: hsl(270, 50%, 20%);
+}
+
 [data-theme=dark] {
   --pico-primary: #a954fd;
   --pico-primary-background: rebeccapurple;
@@ -29,11 +39,21 @@ details summary {
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 details summary::after {
   width: 2rem;
   background-size: 2rem auto;
+}
+
+blockquote {
+  margin-bottom: 1.75rem;
+}
+
+/* markdown qutes produce p tags inside, they should have no extra space below */
+blockquote p:only-child {
+  margin: 0;
 }
 
 /*
