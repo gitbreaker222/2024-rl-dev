@@ -19,12 +19,20 @@ Work in professional roles with few examples:
 
 <details>
   <summary role="button">
-    … detailed CV and more activities in university and spare time:
+    … detailed CV, more activities in spare time, local hackspace and university
   </summary>
-
+  
+  - 2025 October: temporärhaus - leading workshop "democrycy patches" at young voices for democracy, Neu-Ulm
+  - 2025 September: Installed Ubuntu on an old 2012 MacBook (it works!)
+  - 2025 August: Organized "Screamers Workshop" Metal Karaoke
+  - 2025 April: Made a receipt-printer work at my second job
+  - 2024 October: temporärhaus - leading workshop "democracy patches" at the long night for
+democracy, Neu-Ulm
+  - 2024 September: temporärhaus - leading workshop "democracy patches" at Kulturnacht, Neu-Ulm
+  - 2024 October: Demonstration against AfD, Ulm
   - 2024 September: Start **Frontend Developer**, at rrooaarr interactive solutions, Ulm
     - until 2025 February
-  - 2024 January: publish self developed chess remix [Sowie Schach][schach] (kinda like chess)
+  - 2024 January: Remixed chess and called it [Sowie Schach][schach] (kinda like chess)
   - 2023 September: temporärhaus - interactive installation "street chat-gpt" at the Kulturnacht, Neu-Ulm
   - 2023 August: Join local make-space [temporärhaus e.V.][tph], Neu-Ulm
   - 2022 October: Attended [Smashing Conference][sc22] for web-design / -development, Freiburg
