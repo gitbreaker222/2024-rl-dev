@@ -14,14 +14,21 @@ Pico Semantic HTML Styles
   --pico-primary-hover-underline: hsl(270, 50%, 20%);
 }
 
-[data-theme=dark] {
-  --pico-primary: #a954fd;
-  --pico-primary-background: rebeccapurple;
-  --pico-primary-underline: rebeccapurple;
+@media screen {
+  [data-theme=dark] {
+    --pico-primary: #a954fd;
+    --pico-primary-background: rebeccapurple;
+    --pico-primary-underline: rebeccapurple;
+  }
 }
 
 :root {
   --elevation-1: 10;
+}
+
+li>ul,
+li>ol {
+  margin-bottom: 0;
 }
 
 details {
@@ -59,6 +66,11 @@ blockquote p:only-child {
 /*
 Custom Styles 
 */
+br[page] {
+  page-break-after: always;
+  display: none;
+}
+
 .hero-img {
   display: block;
   margin: 0 auto;
@@ -78,4 +90,9 @@ img[src*="#img-sm"] {
 img[src^="/emoji"] {
   width: auto;
   height: 1.2em;
+}
+
+.home-examples {
+  display: grid;
+  place-content: center;
 }
