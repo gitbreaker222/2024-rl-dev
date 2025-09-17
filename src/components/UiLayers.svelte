@@ -4,7 +4,7 @@
 
 <ui-root class:iso={isIso}>
   <ui-layer class="notifications">
-    <div class="notification">new message* {isIso}</div>
+    <div class="notification">new message*</div>
   </ui-layer>
 
   <ui-layer class="page-frame">
