@@ -43,6 +43,11 @@
     selected = getRandomIndex();
     isOpen = true;
   };
+
+  const handleIndex = () => {
+    if (selected === lyrics.length - 1) selected = 0;
+    else selected += 1;
+  };
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -72,9 +77,14 @@
       X
     </button>
 
-    <small>
-      {selected + 1} / {lyrics.length}
-    </small>
+    <button
+      class="b-index"
+      onclick={handleIndex}
+    >
+      <small>
+        {selected + 1} / {lyrics.length}
+      </small>
+    </button>
   </div>
 
   <button
@@ -163,10 +173,13 @@
     margin: 0;
     width: 75%;
   }
-  small {
+  .b-index {
     position: absolute;
     right: 1rem;
     bottom: 1rem;
+    padding: 0;
+    background: none;
+    border: none;
   }
   .b-open {
     grid-row: 2 / -1;
