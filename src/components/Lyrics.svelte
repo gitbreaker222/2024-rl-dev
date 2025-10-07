@@ -130,7 +130,7 @@
     transform: rotateX(0) rotateZ(0) scale(1);
   }
   .backside {
-    background-image: url(/public/card\ back.jpg);
+    background-image: url(/card\ back.jpg);
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
