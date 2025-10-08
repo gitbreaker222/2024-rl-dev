@@ -59,6 +59,7 @@
     position: relative;
     box-shadow: 0 0 0 1px inset;
     transform-style: preserve-3d;
+    transform: rotateX(0) rotateZ(0);
     transition: transform 1s;
   }
 
@@ -125,7 +126,6 @@
   }
 
   ui-root.iso {
-    transform-style: preserve-3d;
     transform: rotateX(45deg) rotateZ(-45deg);
   }
   .iso ui-layer {
@@ -134,16 +134,24 @@
       0 0 1px 1px cyan inset;
   }
 
-  .iso ui-layer:nth-child(1) {
-    transform: translate3d(0, 0, calc(40px * 1));
+  ui-layer {
+    --d: 1px;
+    transform: translate3d(0, 0, calc(var(--d) * var(--i)));
   }
-  .iso ui-layer:nth-child(2) {
-    transform: translate3d(0, 0, calc(40px * 2));
+  ui-layer:nth-child(1) {
+    --i: 4;
   }
-  .iso ui-layer:nth-child(3) {
-    transform: translate3d(0, 0, calc(40px * 3));
+  ui-layer:nth-child(2) {
+    --i: 1;
   }
-  .iso ui-layer:nth-child(4) {
-    transform: translate3d(0, 0, calc(40px * 4));
+  ui-layer:nth-child(3) {
+    --i: 2;
+  }
+  ui-layer:nth-child(4) {
+    --i: 3;
+  }
+
+  .iso ui-layer {
+    --d: 40px;
   }
 </style>
