@@ -36,18 +36,20 @@ const theme = "dark";
 <style>
   @media screen {
     header {
-      --_bg: hwb(from var(--pico-background-color) h w b / 0.7);
+      --_bg: hwb(from var(--pico-background-color) h w b / 0.5);
       position: sticky;
       top: 0;
       background: var(--pico-background-color);
       box-shadow:
         0 0 0.3rem 0.3rem var(--pico-background-color),
-        0 0.4rem 1rem 1rem var(--_bg, --pico-background-color);
+        0 0.4rem 0.4rem 0.3rem var(--_bg, --pico-background-color);
       z-index: var(--elevation-1);
     }
   }
-  header {
-    padding-inline: 1rem;
+  @media (max-width: 576px) {
+    header {
+      padding-block: 0.5rem;
+    }
   }
 
   main {

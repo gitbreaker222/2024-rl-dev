@@ -29,7 +29,7 @@
     },
     {
       text: "Nothing is safe, ok?\nNothing!\n...make the most out of it while you're safe NOW.",
-      cite: "Lemmy - ZDF Aspekte Interview (2015)",
+      cite: "Lemmy (Motörhead) - ZDF Aspekte Interview (2015)",
       url: "https://youtu.be/i1uOh8beP2o?t=140",
     },
   ];
@@ -179,7 +179,7 @@
   hr {
     border-top: 1px solid currentColor;
     margin: 0;
-    width: 75%;
+    width: calc(100% - var(--pico-spacing) * 4);
   }
   .b-index {
     position: absolute;
