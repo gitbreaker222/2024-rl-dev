@@ -3,7 +3,7 @@
 
   const lyrics = [
     {
-      text: "Alles ist schwer bevor es einfach ist.\nAlles scheitert bis es klappt",
+      text: "Alles ist schwer\nbevor es einfach ist.\nAlles scheitert\nbis es klappt",
       cite: "Onkelz - Flügel für dich (2020)",
       url: "https://www.musixmatch.com/lyrics/B%C3%B6hse-Onkelz/Fl%C3%BCgel-f%C3%BCr-Dich",
     },
@@ -13,7 +13,7 @@
       url: "https://www.musixmatch.com/lyrics/Broilers/33-rpm",
     },
     {
-      text: "Why should I go where everyone goes?\nWhy should I do what everyone does?",
+      text: "Why should I go\nwhere everyone goes?\nWhy should I do\nwhat everyone does?",
       cite: "Hosen - Pushed again (1998)",
       url: "https://genius.com/Die-toten-hosen-pushed-again-lyrics",
     },
@@ -28,9 +28,9 @@
       url: "https://www.musixmatch.com/lyrics/B%C3%B6hse-Onkelz/Deutschland-im-Herbst",
     },
     {
-      text: "Come let′s get away\nNo one knows you like I do\nWe will pass it if\nYou let the tires kiss the ground",
-      cite: "Guano Apes - Break the line (2004)",
-      url: "https://www.musixmatch.com/lyrics/Guano-Apes/break-the-line",
+      text: "Nothing is safe, ok?\nNothing!\n...make the most out of it while you're safe NOW.",
+      cite: "Lemmy - ZDF Aspekte Interview (2015)",
+      url: "https://youtu.be/i1uOh8beP2o?t=140",
     },
   ];
 
@@ -62,12 +62,18 @@
     <button
       class={["backside", { "pointer-blocker": isOpen }]}
       onclick={handleOpen}
+      aria-label="card backside"
     ></button>
     <blockquote>
       <div class="overflow-box">
         {lyric.text}
       </div>
-      <cite>– <a href={lyric.url}>{lyric.cite}</a></cite>
+      <cite
+        >– <a
+          href={lyric.url}
+          target="_blank">{lyric.cite}</a
+        ></cite
+      >
     </blockquote>
     <hr />
     <button
@@ -161,8 +167,10 @@
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
+    width: 100%;
     height: 100%;
     overflow: hidden;
+    font-size: smaller;
   }
   .overflow-box {
     overflow: auto;
